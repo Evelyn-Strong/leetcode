@@ -49,83 +49,41 @@ public class Permute {
 
     //解题思路
     //迭代函数，当有全排列的时候
-    //当n-1的时候也是一个全排列,元素是原先nums减少某个数
+    //回溯算法， 而且记录已经visited 数据
+    public static List<List<Integer>> result =  new LinkedList<>();
 
     public static List<List<Integer>> permute(int[] nums) {
-        List<List<Integer>> result =  new LinkedList<>();
 
-        iternums(nums,result);
-
+        List<Integer> reo = new LinkedList<>();
+        boolean[] visited =  new boolean[nums.length];
+        iternums(nums,0,reo,visited);
         return result;
 
     }
 
-    private static void iternums(int[] nums, List<List<Integer>> result){
-        List<List<Integer>> tmp = new LinkedList<>();
-        if(nums.length < 1) return;
-        if(nums.length == 1){
-            for (Iterator<List<Integer>> itr = result.iterator(); itr.hasNext(); ) {
-                List<Integer> l = itr.next();
-                l.add(nums[0]);
-                tmp.add(l);
-            }
-            result = tmp;
+    private static void iternums(int[] nums, int deep, List<Integer> reo, boolean[] visited){
+
+        if(reo.size() == nums.length){
+            List<Integer> tmp = new LinkedList<>();
+            tmp.addAll(reo);
+            result.add(tmp);
             return;
         }
-
-        for(int i=0; i< nums.length;i++){
-
-            int[] tmpA = new int[]{} ;
-            if(i==0) tmpA = Arrays.copyOfRange(nums,1,nums.length);
-            else if(i==nums.length) tmpA = Arrays.copyOfRange(nums,0,nums.length-1);
-            else {
-                int[] array1 = Arrays.copyOfRange(nums,0,i-1);
-                int[] array2 = Arrays.copyOfRange(nums,i+1,nums.length);
-                System.arraycopy(array1, 0, tmpA, 0, array1.length);
-                System.arraycopy(array2, 0, tmpA, array1.length, array2.length);
-            }
-
-            if(result.size()<1){
-                List ls = new LinkedList<>();
-                ls.add(nums[i]);
-                result.add(ls);
-            }else{
-                for (Iterator<List<Integer>> itr = result.iterator(); itr.hasNext(); ) {
-                    List<Integer> l = itr.next();
-                    l.add(nums[i]);
-                    tmp.add(l);
-                }
-                result=tmp;
-            }
-            iternums(tmpA,result);
+        for(int i=0;i<nums.length;i++){
+            if (visited[i]) continue;
+            reo.add(nums[i]);
+            visited[i] = true;
+            iternums(nums,deep+1,reo,visited);
+            reo.remove((Integer) nums[i]);
+            visited[i] = false;
         }
 
-
-//
-////        for(int i=0;i<nums.length;i++) {
-////
-////            if (idx == 0) {
-////                List<Integer> l = new LinkedList<>();
-////                l.add(nums[i]);
-////                result.add(l);
-////            } else {
-////                for (Iterator<List<Integer>> itr = result.iterator(); itr.hasNext(); ) {
-////                    if(i == idx ) break;
-////                    List<Integer> l = itr.next();
-////                    l.add(nums[i]);
-////                    tmp.add(l);
-////                }
-////            }
-////
-////            iternums(nums,idx+1,result);
-////        }
-//        result = tmp;
     }
 
 
     public static void main(String[] args) {
 
-        int[] inputs = new int[]{1,2,3};
+        int[] inputs = new int[]{0,1};
 
         System.out.println(permute(inputs));
 
