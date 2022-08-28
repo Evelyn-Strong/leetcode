@@ -5,7 +5,9 @@ package com.eve.leetcode.medium.list;
  * Created by Eve on 2022/8/14.
  */
 public class GetIntersectionNode {
-
+    //链表
+    //1。双指针， acur & bcur 走相交前（a+b）+ 相交后的共同距离
+    //2。两个链表距离相减， 从同一个起始点开始对比元素是否相同
 
     public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode newA = headA;
@@ -31,8 +33,8 @@ public class GetIntersectionNode {
             while(n-->0){
                 newA = newA.next;
             }
-            while(newA.next != null){
-                if(newA.val == newB.val){
+            while(newA!= null){
+                if(newA == newB){
                     return newA;
                 }else{
                     newA =  newA.next;
@@ -46,8 +48,8 @@ public class GetIntersectionNode {
             while(n-->0){
                 newB = newB.next;
             }
-            while(newA.next != null){
-                if(newA.val == newB.val){
+            while(newA != null){
+                if(newA == newB){
                     return newA;
                 }else{
                     newA =  newA.next;
