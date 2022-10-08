@@ -1,9 +1,7 @@
 package com.eve.leetcode.medium.iterator;
 
-import com.sun.tools.javac.util.ArrayUtils;
-
-import java.util.*;
-import java.util.concurrent.LinkedBlockingDeque;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by Eve on 2022/8/8.

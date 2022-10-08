@@ -1,11 +1,5 @@
 package com.eve.leetcode.medium.iterator;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-
-import static com.sun.tools.doclint.Entity.sum;
-
 /**
  * Created by Eve on 2022/8/24.
  */

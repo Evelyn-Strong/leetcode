@@ -1,11 +1,6 @@
 package com.eve.leetcode.medium.tree;
 
-import com.sun.tools.javac.util.*;
-
 import java.util.*;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Created by Eve on 2022/8/3.

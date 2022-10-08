@@ -5,10 +5,8 @@ package com.eve.leetcode.medium.list;
  */
 
 
-import sun.jvm.hotspot.debugger.windbg.DLL;
-
-import java.util.*;
-import java.util.concurrent.LinkedBlockingQueue;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 请你设计并实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。
