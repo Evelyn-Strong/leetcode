@@ -9,7 +9,7 @@ public class GroupAnagrams {
 
     /*
     输入: strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
-    输出: [["bat"],["nat","tan"],["ate","eat","tea"]]
+    输出: [["bat"},{"nat","tan"},{"ate","eat","tea"]]
     链接：https://leetcode.cn/leetbook/read/top-interview-questions-medium/xvaszc/
     */
     //解题思路：

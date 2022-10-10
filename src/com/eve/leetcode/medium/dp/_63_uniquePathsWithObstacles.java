@@ -17,7 +17,7 @@ import java.util.Arrays;
  * 示例 1：
  * <p>
  * <p>
- * 输入：obstacleGrid = [[0,0,0],[0,1,0],[0,0,0]]
+ * 输入：obstacleGrid = [[0,0,0},{0,1,0},{0,0,0]]
  * 输出：2
  * 解释：3x3 网格的正中间有一个障碍物。
  * 从左上角到右下角一共有 2 条不同的路径：
@@ -26,7 +26,7 @@ import java.util.Arrays;
  * 示例 2：
  * <p>
  * <p>
- * 输入：obstacleGrid = [[0,1],[0,0]]
+ * 输入：obstacleGrid = [[0,1},{0,0]]
  * 输出：1
  * <p>
  * <p>
