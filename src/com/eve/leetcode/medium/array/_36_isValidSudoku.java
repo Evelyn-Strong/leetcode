@@ -206,6 +206,18 @@ public class _36_isValidSudoku {
             }
             return true;
         }
+
+        public boolean isPalindrome(int x) {
+            String num = x+"";
+            int i = 0,j = num.length()-1;
+            while(i<j){
+                if(num.charAt(i) != num.charAt(j)) return false;
+                else {
+                    ++i;--j;
+                }
+            }
+            return true;
+        }
     }
 
     public static void main(String[] args) {
